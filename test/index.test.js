@@ -39,7 +39,7 @@ describe( "merge", function () {
 
   it( "should merge an object", function () {
 
-    var mergedObject = merge( {}, object1, object2, object3 );
+    var mergedObject = merge( {}, object1, object2, {}, object3 );
 
     mergedObject.should.have.a.property( "name", object1.name );
     mergedObject.should.have.a.property( "married", object3.married );
@@ -54,7 +54,7 @@ describe( "merge", function () {
 
   it( "should merge a object deeply", function () {
 
-    var mergedObject = merge( true, {}, object1, object2, object3 );
+    var mergedObject = merge( true, {}, object1, {}, object2, object3 );
 
     mergedObject.should.have.a.property( "name", object1.name );
     mergedObject.should.have.a.property( "married", object3.married );
@@ -70,6 +70,21 @@ describe( "merge", function () {
     mergedObject.address.type.should.have.a.property( "tiles" );
     mergedObject.address.type.tiles.should.have.a.property( "color", object3.address.type.tiles.color );
     mergedObject.address.type.tiles.should.have.a.property( "condition", object3.address.type.tiles.condition );
+
+  } );
+
+  it( "should merge non-objects", function () {
+
+    var mergedObject = merge( {
+      visible: false,
+      active: false
+    }, void 0, {
+      visible: true
+    }, /^/, Object );
+
+    mergedObject.should.be.an.instanceOf( Object );
+    mergedObject.should.have.a.property( "visible", true );
+    mergedObject.should.have.a.property( "active", false );
 
   } );
 

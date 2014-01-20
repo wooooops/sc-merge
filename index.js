@@ -4,7 +4,7 @@ var merge = function () {
 
   var args = Array.prototype.slice.call( arguments ),
     deep = type( args[ 0 ] ) === "boolean" ? args.shift() : false,
-    objects = args.splice( 1, args.length - 1 ),
+    objects = args,
     result = {};
 
   objects.forEach( function ( objectn ) {
