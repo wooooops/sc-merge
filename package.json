@@ -1,0 +1,17 @@
+{
+  "name": "sc-merge",
+  "version": "0.0.1",
+  "description": "Merge properties ",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "David Tsuji",
+  "license": "MIT",
+  "devDependencies": {
+    "should": "~2.1.0"
+  },
+  "dependencies": {
+    "type-component": "0.0.1"
+  }
+}
