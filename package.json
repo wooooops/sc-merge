@@ -1,6 +1,6 @@
 {
   "name": "sc-merge",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Merge properties ",
   "main": "index.js",
   "scripts": {
