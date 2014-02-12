@@ -86,6 +86,12 @@ describe( "merge", function () {
     mergedObject.should.have.a.property( "visible", true );
     mergedObject.should.have.a.property( "active", false );
 
+    merge( {}, void 0 ).should.be.an.instanceOf( Object );
+    Object.keys( merge( {}, void 0 ) ).should.have.a.lengthOf( 0 );
+    Object.keys( merge( {
+      a: "a"
+    }, void 0 ) ).should.have.a.lengthOf( 1 );
+
   } );
 
 } );
